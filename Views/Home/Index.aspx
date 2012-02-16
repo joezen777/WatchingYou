@@ -8,7 +8,10 @@
     <h2><%: ViewData["Message"] %></h2>
     <div id="comments"></div>
     <script type="text/javascript">
-    $.ajax({
+    
+    // $(document).ready(function(){
+
+    jQuery.ajax({
         url: "http://gdata.youtube.com/feeds/api/videos/hLs_ZC2KjlQ/comments?v=2&alt=json&max-results=50",  
         //gets the max first 50 results.  To get the 'next' 50, use &start-index=50
         dataType: "jsonp",
@@ -29,6 +32,7 @@
             });
         }
     });
+    //});
     </script>
     <p>
         To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
