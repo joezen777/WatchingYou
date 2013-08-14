@@ -15,6 +15,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,33 +38,24 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
@@ -75,7 +67,160 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bg-black.png" />
+    <Content Include="Content\bg-grid.png" />
+    <Content Include="Content\blackcanvas.jpg" />
+    <Content Include="Content\canvas.jpg" />
+    <Content Include="Content\cast\alex_bcast.jpg" />
+    <Content Include="Content\cast\bill_cast.jpg" />
+    <Content Include="Content\cast\brant_bcast.jpg" />
+    <Content Include="Content\cast\cast_alex_a.jpg" />
+    <Content Include="Content\cast\cast_alex_b.jpg" />
+    <Content Include="Content\cast\cast_alex_c.jpg" />
+    <Content Include="Content\cast\cast_bill_a.jpg" />
+    <Content Include="Content\cast\cast_bill_b.jpg" />
+    <Content Include="Content\cast\cast_bill_c.jpg" />
+    <Content Include="Content\cast\cast_bob_a.jpg" />
+    <Content Include="Content\cast\cast_bob_b.jpg" />
+    <Content Include="Content\cast\cast_bob_c.jpg" />
+    <Content Include="Content\cast\cast_brant_a.jpg" />
+    <Content Include="Content\cast\cast_brant_b.jpg" />
+    <Content Include="Content\cast\cast_brant_c.jpg" />
+    <Content Include="Content\cast\cast_brennan_a.jpg" />
+    <Content Include="Content\cast\cast_brennan_b.jpg" />
+    <Content Include="Content\cast\cast_brennan_c.jpg" />
+    <Content Include="Content\cast\cast_charles_a.jpg" />
+    <Content Include="Content\cast\cast_charles_b.jpg" />
+    <Content Include="Content\cast\cast_charles_c.jpg" />
+    <Content Include="Content\cast\cast_david_a.jpg" />
+    <Content Include="Content\cast\cast_david_b.jpg" />
+    <Content Include="Content\cast\cast_david_c.jpg" />
+    <Content Include="Content\cast\cast_elle_a.jpg" />
+    <Content Include="Content\cast\cast_elle_b.jpg" />
+    <Content Include="Content\cast\cast_elle_c.jpg" />
+    <Content Include="Content\cast\cast_jenn_a.jpg" />
+    <Content Include="Content\cast\cast_jenn_b.jpg" />
+    <Content Include="Content\cast\cast_jenn_c.jpg" />
+    <Content Include="Content\cast\cast_johnny_a.jpg" />
+    <Content Include="Content\cast\cast_johnny_b.jpg" />
+    <Content Include="Content\cast\cast_johnny_c.jpg" />
+    <Content Include="Content\cast\cast_johnt_a.jpg" />
+    <Content Include="Content\cast\cast_johnt_b.jpg" />
+    <Content Include="Content\cast\cast_johnt_c.jpg" />
+    <Content Include="Content\cast\cast_kelli_a.jpg" />
+    <Content Include="Content\cast\cast_kelli_b.jpg" />
+    <Content Include="Content\cast\cast_kelli_c.jpg" />
+    <Content Include="Content\cast\cast_kelsey_a.jpg" />
+    <Content Include="Content\cast\cast_kelsey_b.jpg" />
+    <Content Include="Content\cast\cast_kelsey_c.jpg" />
+    <Content Include="Content\cast\cast_lizzie_a.jpg" />
+    <Content Include="Content\cast\cast_lizzie_b.jpg" />
+    <Content Include="Content\cast\cast_lizzie_c.jpg" />
+    <Content Include="Content\cast\cast_michael_a.jpg" />
+    <Content Include="Content\cast\cast_michael_b.jpg" />
+    <Content Include="Content\cast\cast_michael_c.jpg" />
+    <Content Include="Content\cast\cast_morgan_a.jpg" />
+    <Content Include="Content\cast\cast_morgan_b.jpg" />
+    <Content Include="Content\cast\cast_morgan_c.jpg" />
+    <Content Include="Content\cast\cast_robert_a.jpg" />
+    <Content Include="Content\cast\cast_robert_b.jpg" />
+    <Content Include="Content\cast\cast_robert_c.jpg" />
+    <Content Include="Content\cast\cast_roman_a.jpg" />
+    <Content Include="Content\cast\cast_roman_b.jpg" />
+    <Content Include="Content\cast\cast_roman_c.jpg" />
+    <Content Include="Content\cast\cast_ryan_a.jpg" />
+    <Content Include="Content\cast\cast_ryan_b.jpg" />
+    <Content Include="Content\cast\cast_ryan_c.jpg" />
+    <Content Include="Content\cast\cast_sandy_a.jpg" />
+    <Content Include="Content\cast\cast_sandy_b.jpg" />
+    <Content Include="Content\cast\cast_sandy_c.jpg" />
+    <Content Include="Content\cast\cast_sarah_a.jpg" />
+    <Content Include="Content\cast\cast_sarah_b.jpg" />
+    <Content Include="Content\cast\cast_sarah_c.jpg" />
+    <Content Include="Content\cast\cast_tyler_a.jpg" />
+    <Content Include="Content\cast\cast_tyler_b.jpg" />
+    <Content Include="Content\cast\cast_tyler_c.jpg" />
+    <Content Include="Content\cast\charles_bcast.jpg" />
+    <Content Include="Content\cast\david_bcast.jpg" />
+    <Content Include="Content\cast\johnt_bcast.jpg" />
+    <Content Include="Content\cast\ilwyofb_cast.jpg" />
+    <Content Include="Content\cast\kelli_bcast.jpg" />
+    <Content Include="Content\cast\leadingcharssprite.jpg" />
+    <Content Include="Content\cast\leadingcharssprite700.jpg" />
+    <Content Include="Content\cast\lizzie_bcast.jpg" />
+    <Content Include="Content\cast\michael_bcast.jpg" />
+    <Content Include="Content\cast\morgan_bcast.jpg" />
+    <Content Include="Content\cast\robert_bcast.jpg" />
+    <Content Include="Content\cast\roman_bcast.jpg" />
+    <Content Include="Content\cast\ryan_bcast.jpg" />
+    <Content Include="Content\cast\sandy_bcast.jpg" />
+    <Content Include="Content\cast\sarah_bcast.jpg" />
+    <Content Include="Content\cast\tyler_bcast.jpg" />
+    <Content Include="Content\Copy of Site.css" />
+    <Content Include="Content\crew\AC.jpg" />
+    <Content Include="Content\crew\alyx_pa.jpg" />
+    <Content Include="Content\crew\Audio.jpg" />
+    <Content Include="Content\crew\cary_pa.jpg" />
+    <Content Include="Content\crew\DP.jpg" />
+    <Content Include="Content\crew\DP2a.jpg" />
+    <Content Include="Content\crew\DP2b.jpg" />
+    <Content Include="Content\crew\ernesto_carpenter.jpg" />
+    <Content Include="Content\crew\gonzalo_bts.jpg" />
+    <Content Include="Content\crew\joe_artdirector.jpg" />
+    <Content Include="Content\crew\jonathan_propmakeup.jpg" />
+    <Content Include="Content\crew\kaitlynn_padit.jpg" />
+    <Content Include="Content\crew\laura_wardrobe.jpg" />
+    <Content Include="Content\crew\nichol_producer.jpg" />
+    <Content Include="Content\crew\Producer.jpg" />
+    <Content Include="Content\crew\promise_pa.jpg" />
+    <Content Include="Content\crew\richard_jibexpert.jpg" />
+    <Content Include="Content\crew\ScriptSupervisor.jpg" />
+    <Content Include="Content\crew\Slate.jpg" />
+    <Content Include="Content\crew\wy director photo.jpg" />
+    <Content Include="Content\Facebook.png" />
+    <Content Include="Content\FBShare.jpg" />
+    <Content Include="Content\FBShareS.jpg" />
+    <Content Include="Content\gradientbg.jpg" />
+    <Content Include="Content\hover-magnify.png" />
+    <Content Include="Content\progress.gif" />
+    <Content Include="Content\sidebar1bottom.png" />
+    <Content Include="Content\sidebar1middle.png" />
+    <Content Include="Content\sidebar1top.png" />
+    <Content Include="Content\sidebar2bottom.png" />
+    <Content Include="Content\sidebar2middle.png" />
+    <Content Include="Content\sidebar2top.png" />
+    <Content Include="Content\teaserpic.jpg" />
+    <Content Include="Content\trailerpic.jpg" />
+    <Content Include="Content\twitter.png" />
+    <Content Include="Content\Watching You TV Show.jpg" />
+    <Content Include="Content\WatchingYouMoviePoster.jpg" />
+    <Content Include="Content\wy bts.png" />
+    <Content Include="Content\wy cast.png" />
+    <Content Include="Content\wy crew.png" />
+    <Content Include="Content\wy titlebanner.png" />
+    <Content Include="Content\wy watch.png" />
+    <Content Include="Content\Youtube.png" />
     <Content Include="Global.asax" />
+    <Content Include="ror.xml" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.custom.min.js" />
+    <Content Include="Scripts\jquery.fittext.js" />
+    <Content Include="Scripts\jquery.flip.min.js" />
+    <Content Include="Scripts\jquery.hoverIntent.minified.js" />
+    <Content Include="Scripts\jquery.illuminate.0.7.min.js" />
+    <Content Include="Scripts\jQuery.tubeplayer.min.js" />
+    <Content Include="Scripts\mosaic.1.0.1.min.js" />
+    <Content Include="sitemap.html" />
+    <Content Include="sitemap.xml" />
+    <Content Include="urllist.txt" />
+    <Content Include="Views\Home\BTS.aspx" />
+    <Content Include="Views\Home\Cast.aspx" />
+    <Content Include="Views\Home\Watching_You_Characters.aspx" />
+    <Content Include="Views\Home\Funny_Web_Series.aspx" />
+    <Content Include="Views\Home\Movies_In_San_Antonio.aspx" />
+    <Content Include="Views\Home\FB.aspx" />
+    <Content Include="Views\Home\GG.aspx" />
+    <Content Include="Views\Home\Crew.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -109,6 +254,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Copy of Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\cast\cast name footer.xcf" />
+    <None Include="Content\cast\leadingchars.xcf" />
+    <None Include="Content\PressRelease_WatchingYouSeries.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

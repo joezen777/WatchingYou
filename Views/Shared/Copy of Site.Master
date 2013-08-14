@@ -1,0 +1,178 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%=Url.Content("~/Scripts/jquery-1.7.2.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Scripts/jquery-ui-1.8.20.custom.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Scripts/jquery.validate.min.js")%>"></script>
+</head>
+<body style="text-align: center;">
+    <div id="title" style="float: left; background-color: transparent; width: 756px;
+        text-align: center;">
+        <a href="<%= Url.Action("About","Home") %>" style="border: none;">
+            <img alt="Watching You Series" src="<%= Url.Content("~/Content/wy titlebanner.png") %>"
+                style="border: none;" />
+        </a>
+    </div>
+    <div id="menucontainer" style="width: 756px; background-color: transparent; position: absolute;
+        top: 200px; margin-left: auto;">
+        <div id="menuWatchDiv" style="width: 756px; overflow: hidden; float: right; margin-left: auto;
+            background-color: White; height: 0px;">
+            <h1 style="color: Black;">
+                Watch The Show</h1>
+        </div>
+        <div style="width: 756px; height: 203px; background-color: transparent; ttop: 0px; float: left; position: absolute;">
+            <div id="menuWatch" style="float: left; margin-left: 0px;">
+                <a href="<%= Url.Action("Index", "Home") %>" style="border: none;">
+                    <img alt="Watch The Show" src="<%= Url.Content("~/Content/wy watch.png") %>" style="border: none;" /></a>
+            </div>
+        </div>
+        <div id="menuCastDiv" style="width: 756px; overflow: hidden; float: right; margin-left: auto;
+            background-color: White; height: 0px;">
+            <h1 style="color: Black;">
+                The Cast</h1>
+        </div>
+        <div style="width: 756px; height: 203px; background-color: transparent; top: 0px; float: left; position: absolute;">
+            <div id="menuCast" style="float: left; margin-left: 166px;">
+                <a href="<%= Url.Action("Cast", "Home") %>" style="border: none;">
+                    <img alt="The Cast" src="<%= Url.Content("~/Content/wy cast.png") %>" style="border: none;" /></a></div>
+        </div>
+    <div id="menuCrewDiv" style="width: 756px; overflow: hidden; float: right; margin-left: auto;
+        background-color: White; height: 0px;">
+        <h1 style="color: Black;">
+            The Crew</h1>
+    </div>
+    <div style="width: 756px; height: 203px; background-color: transparent;top: 0px; float: left; position: absolute;">
+        <div id="menuCrew" style="float: left; margin-left: 362px;">
+            <a href="<%= Url.Action("Crew", "Home") %>" style="border: none;">
+                <img alt="The Crew" src="<%= Url.Content("~/Content/wy crew.png") %>" style="border: none;" /></a>
+        </div>
+    </div>
+    <div id="menuBTSDiv" style="width: 756px; overflow: hidden; float: right; margin-left: auto;
+        background-color: White; height: 0px;">
+        <h1 style="color: Black;">
+            Behind The Scenes</h1>
+            </div>
+        <div style="width: 756px; height: 203px; background-color: transparent;top: 0px; float: left; position: absolute;">
+            <div id="menuBTS" style="float: left; margin-left: 569px;">
+                <a href="<%= Url.Action("BTS", "Home") %>" style="border: none;">
+                    <img alt="Behind-The-Scenes" src="<%= Url.Content("~/Content/wy bts.png") %>" style="border: none;" /></a></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(
+            function () {
+                //$(".menuWatch").href = '';
+                $("#menuWatch").click(function () {
+                    $("#menuWatch").animate({ 'margin-top': '40px' }, 50, function () { });
+                    $("#menuWatchDiv").animate({ 'height': '40px' }, 50, function () {
+                        $("#menuWatch").animate({ 'margin-top': '100px' }, 50, function () { });
+                        $("#menuWatchDiv").animate({ 'height': '100px' }, 50, function () {
+                            $("#menuWatch").animate({ 'margin-top': '180px' }, 50, function () { });
+                            $("#menuWatchDiv").animate({ 'height': '180px' }, 50, function () {
+                                $("#menuWatch").animate({ 'margin-top': '280px' }, 50, function () { });
+                                $("#menuWatchDiv").animate({ 'height': '280px' }, 50, function () {
+                                    $("#menuWatch").animate({ 'margin-top': '400px' }, 50, function () { });
+                                    $("#menuWatchDiv").animate({ 'height': '400px' }, 50, function () {
+                                        $("#menuWatch").animate({ 'margin-top': '500px' }, 50, function () { });
+                                        $("#menuWatchDiv").animate({ 'height': '500px' }, 50, function () {
+                                            $("#menuWatch").animate({ 'margin-top': '600px' }, 50, function () { });
+                                            $("#menuWatchDiv").animate({ 'height': '600px' }, 50, function () {
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                    return false;
+                });
+
+                $("#menuCast").click(function () {
+                    $("#menuCast").animate({ 'margin-top': '40px' }, 50, function () { });
+                    $("#menuCastDiv").animate({ 'height': '40px' }, 50, function () {
+                        $("#menuCast").animate({ 'margin-top': '100px' }, 50, function () { });
+                        $("#menuCastDiv").animate({ 'height': '100px' }, 50, function () {
+                            $("#menuCast").animate({ 'margin-top': '180px' }, 50, function () { });
+                            $("#menuCastDiv").animate({ 'height': '180px' }, 50, function () {
+                                $("#menuCast").animate({ 'margin-top': '280px' }, 50, function () { });
+                                $("#menuCastDiv").animate({ 'height': '280px' }, 50, function () {
+                                    $("#menuCast").animate({ 'margin-top': '400px' }, 50, function () { });
+                                    $("#menuCastDiv").animate({ 'height': '400px' }, 50, function () {
+                                        $("#menuCast").animate({ 'margin-top': '500px' }, 50, function () { });
+                                        $("#menuCastDiv").animate({ 'height': '500px' }, 50, function () {
+                                            $("#menuCast").animate({ 'margin-top': '600px' }, 50, function () { });
+                                            $("#menuCastDiv").animate({ 'height': '600px' }, 50, function () {
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                    return false;
+                });
+
+                $("#menuCrew").click(function () {
+                    $("#menuCrew").animate({ 'margin-top': '40px' }, 50, function () { });
+                    $("#menuCrewDiv").animate({ 'height': '40px' }, 50, function () {
+                        $("#menuCrew").animate({ 'margin-top': '100px' }, 50, function () { });
+                        $("#menuCrewDiv").animate({ 'height': '100px' }, 50, function () {
+                            $("#menuCrew").animate({ 'margin-top': '180px' }, 50, function () { });
+                            $("#menuCrewDiv").animate({ 'height': '180px' }, 50, function () {
+                                $("#menuCrew").animate({ 'margin-top': '280px' }, 50, function () { });
+                                $("#menuCrewDiv").animate({ 'height': '280px' }, 50, function () {
+                                    $("#menuCrew").animate({ 'margin-top': '400px' }, 50, function () { });
+                                    $("#menuCrewDiv").animate({ 'height': '400px' }, 50, function () {
+                                        $("#menuCrew").animate({ 'margin-top': '500px' }, 50, function () { });
+                                        $("#menuCrewDiv").animate({ 'height': '500px' }, 50, function () {
+                                            $("#menuCrew").animate({ 'margin-top': '600px' }, 50, function () { });
+                                            $("#menuCrewDiv").animate({ 'height': '600px' }, 50, function () {
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                    return false;
+                });
+
+                $("#menuBTS").click(function () {
+                    $("#menuBTS").animate({ 'margin-top': '40px' }, 50, function () { });
+                    $("#menuBTSDiv").animate({ 'height': '40px' }, 50, function () {
+                        $("#menuBTS").animate({ 'margin-top': '100px' }, 50, function () { });
+                        $("#menuBTSDiv").animate({ 'height': '100px' }, 50, function () {
+                            $("#menuBTS").animate({ 'margin-top': '180px' }, 50, function () { });
+                            $("#menuBTSDiv").animate({ 'height': '180px' }, 50, function () {
+                                $("#menuBTS").animate({ 'margin-top': '280px' }, 50, function () { });
+                                $("#menuBTSDiv").animate({ 'height': '280px' }, 50, function () {
+                                    $("#menuBTS").animate({ 'margin-top': '400px' }, 50, function () { });
+                                    $("#menuBTSDiv").animate({ 'height': '400px' }, 50, function () {
+                                        $("#menuBTS").animate({ 'margin-top': '500px' }, 50, function () { });
+                                        $("#menuBTSDiv").animate({ 'height': '500px' }, 50, function () {
+                                            $("#menuBTS").animate({ 'margin-top': '600px' }, 50, function () { });
+                                            $("#menuBTSDiv").animate({ 'height': '600px' }, 50, function () {
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                    return false;
+                });
+            });
+    </script>
+    <div id="main">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+        <div id="footer">
+        </div>
+</body>
+</html>

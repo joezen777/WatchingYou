@@ -5,76 +5,79 @@ to use a different color start by replacing all instances of
 ----------------------------------------------------------*/
 body
 {
-    background-color: #5c87b2;
+    background-color: #555;
     font-size: .75em;
     font-family: Verdana, Helvetica, Sans-Serif;
+    background-image: url('gradientbg.jpg');
+    background-repeat: repeat-x;
+    background-position: top;
     margin: 0;
     padding: 0;
-    color: #696969;
+    color: #fff;
 }
 
 a:link
 {
-    color: #034af3;
-    text-decoration: underline;
+    /*color: #034af3;
+    text-decoration: underline;*/
 }
 a:visited
 {
-    color: #505abc;
+    /*color: #505abc;*/
 }
 a:hover
 {
-    color: #1d60ff;
-    text-decoration: none;
+    /*color: #1d60ff;
+    text-decoration: none;*/
 }
 a:active
 {
-    color: #12eb87;
+    /*color: #12eb87;*/
 }
 
 p, ul
 {
-    margin-bottom: 20px;
-    line-height: 1.6em;
+    /*margin-bottom: 20px;
+    line-height: 1.6em;*/
 }
 
 /* HEADINGS   
 ----------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6
 {
-    font-size: 1.5em;
+    /*font-size: 1.5em;
     color: #000;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;*/
 }
 
 h1
 {
-    font-size: 2em;
+    /*font-size: 2em;
     padding-bottom: 0;
-    margin-bottom: 0;
+    margin-bottom: 0;*/
 }
 h2
 {
-    padding: 0 0 10px 0;
+    /*padding: 0 0 10px 0;*/
 }
 h3
 {
-    font-size: 1.2em;
+    /*font-size: 1.2em;*/
 }
 h4
 {
-    font-size: 1.1em;
+    /*font-size: 1.1em;*/
 }
 h5, h6
 {
-    font-size: 1em;
+    /*font-size: 1em;*/
 }
 
 /* this rule styles <h2> tags that are the 
 first child of the left and right table columns */
 .rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
 {
-    margin-top: 0;
+    /*margin-top: 0;*/
 }
 
 /* PRIMARY LAYOUT ELEMENTS   
@@ -82,103 +85,1137 @@ first child of the left and right table columns */
 
 /* you can specify a greater or lesser percentage for the 
 page width. Or, you can specify an exact pixel width. */
-.page
+#page
 {
-    width: 90%;
+    width: 758px;
     margin-left: auto;
     margin-right: auto;
 }
 
 #header
 {
-    position: relative;
-    margin-bottom: 0px;
-    color: #000;
-    padding: 0;
+    /*position: relative;
+    float: left;
+    color: #000;*/
 }
 
 #header h1
 {
-    font-weight: bold;
-    padding: 5px 0;
-    margin: 0;
+    /*font-weight: bold;
     color: #fff;
     border: none;
     line-height: 2em;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 32px !important;
+    font-size: 32px !important;*/
 }
 
-#main
+#header a img
 {
-    padding: 30px 30px 15px 30px;
+    /*border: 0 none transparent;*/
+}
+
+iframe
+{
+    z-index: -1;
+}
+
+.indentP
+{
+    margin-left: 50px;
+    margin-right: 20px;
+}
+
+.blackCanvasBorder
+{
+    /*background-image: url('blackcanvas.jpg');*/
+    /*background-repeat: repeat;*/
+    background-color: #000;
+    padding: 4px;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #ccc;
+}
+
+.needSomeSpace
+{
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+}
+
+.shadow
+{
+    -moz-box-shadow: 3px 3px 4px #000;
+    -webkit-box-shadow: 3px 3px 4px #000;
+    box-shadow: 3px 3px 4px #000;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+#mainBorder
+{
+    position: absolute;
+    float: left;
+    margin-top: 200px;
+    width: 748px;
+    z-index: -2;
+}
+
+#main 
+{
+    /*position: absolute;*/
+    float: left;
+    /*margin-top: 200px;*/
+    /*background-image: url('canvas.jpg');*/
+    background-repeat: repeat;
+    z-index: -1;
+    background-color: #fff;
+    color: #000;
+    width: 726px;
+    border: 1px solid #aaa;
+    padding: 5px 10px 10px 10px;
+    -moz-border-radius: 1em 4em 1em 4em;
+    border-radius: 1em 4em 1em 4em;
+    /*
     background-color: #fff;
     margin-bottom: 30px;
-    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+    _height: 1px; *//* only IE6 applies CSS properties starting with an underscore */
 }
+
+/* social icons */
+
+#socialContainer
+{
+    float: right;
+    position: absolute;
+    margin-top: 195px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 700px;
+    text-align: right;
+    z-index: -1;
+}
+
+#socialContainer ul li
+{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    
+}
+
+#socialContainer ul li img
+{
+    border: none;
+    width: 32px;
+    height: 32px;
+}
+
+
+/* end social icons */
+
+/* MOSAIC PLUGIN */
+.mosaic-block 
+{
+    height: 162px;
+    width: 162px;
+ 	float:left;
+	position:relative;
+	overflow:hidden;
+	background:#111 url(progress.gif) no-repeat center center;
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
+	-moz-border-radius: 1em 1em 1em 1em;
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid #aaa;
+    -moz-box-shadow: 3px 3px 4px #000;
+    -webkit-box-shadow: 3px 3px 4px #000;
+    box-shadow: 3px 3px 4px #000;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+	.mosaic-backdrop {
+		display:none;
+		position:absolute;
+		top:0;
+		height:100%;
+		width:100%;
+		background:#111;
+		-moz-border-radius: 1em 1em 1em 1em;
+        border-radius: 1em 1em 1em 1em;
+	}
+	
+	.mosaic-overlay {
+		display:none;
+		z-index:5;
+		position:absolute;
+		width:100%;
+		height:100%;
+		background:#111;
+		-moz-border-radius: 0em 1em 1em 1em;
+        border-radius: 0em 1em 1em 1em;
+	}
+	
+	.mosaic-overlay h4
+	{
+	    padding-left: 3px;
+	    padding-right: 3px;
+	}
+	
+	#backDrop
+	{
+	    display: none;
+	    position: fixed;
+	    background-image: url(bg-black.png);
+	    margin-left: 0px;
+	    width: 100%;
+	    margin-top: 0px;
+	    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	    opacity:.8;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+		filter:alpha(opacity=80);
+		z-index:98;
+	}
+	
+	#playerFrame
+	{
+	    display: none;
+	    position: fixed;
+	    width: 662px;
+	    height: 385px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-top: 100px;
+	    z-index: 99;
+	    background-color: #fff;
+	    border: 1px solid black;
+	    text-align: right;
+	    color: #000;
+	    -moz-box-shadow: 3px 3px 4px #000;
+    -webkit-box-shadow: 3px 3px 4px #000;
+    box-shadow: 3px 3px 4px #000;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+	}
+	
+	.youTubeLink
+	{
+	    
+	}
+	
+	#playerBody
+	{
+	    float: left;
+	    position: absolute;
+	    margin-left: 10px;
+	    display: none;
+	    background-color: #000;
+	    width: 640px;
+	    height: 360px;
+	    z-index: 99;
+	    border: 1px solid black;
+	}
+	
+	.mosaic-overlay p 
+	{
+	    padding-left: 5px;
+	    padding-right: 5px;
+	}
+	
+		/*** Custom Animation Styles (You can remove/add any styles below) ***/
+		.circle .mosaic-overlay {
+			background:url(hover-magnify.png) no-repeat center center;
+			opacity:0;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+			filter:alpha(opacity=00);
+			display:none;
+		}
+		
+		.fade .mosaic-overlay {
+			opacity:0;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+			filter:alpha(opacity=00);
+			background:url(bg-black.png);
+		}
+		
+		.bar .mosaic-overlay {
+			bottom:-100px;
+			height:100px;
+			background:url(bg-black.png);
+			color: #fff;
+			opacity:0.8;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+			filter:alpha(opacity=80);
+		}
+		
+		.bar2 .mosaic-overlay {
+			bottom:-50px;
+			height:100px;
+			opacity:0.8;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+			filter:alpha(opacity=80);
+		}
+		/*
+			.bar2 .mosaic-overlay:hover {
+				opacity:1;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+				filter:alpha(opacity=100);
+			}*/
+		
+		.bar3 .mosaic-overlay {
+			top:-100px;
+			height:100px;
+			background:url(bg-black.png);
+		}
+		/*** End Animation Styles ***/
+/* END MOSAIC PLUGIN */
+/* FLIPPING IMAGES */
+
+.squarepic
+{
+    height: 162px;
+    width: 162px;
+    z-index: -5;
+    -moz-border-radius: 1em 1em 1em 1em;
+    border-radius: 1em 1em 1em 1em;
+}
+
+
+.flipBox
+{
+    height: 162px;
+    z-index: -3;
+    width: 162px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #aaa;
+    -moz-border-radius: 1em 1em 1em 1em;
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid #aaa;
+    -moz-box-shadow: 3px 3px 4px #000;
+    -webkit-box-shadow: 3px 3px 4px #000;
+    box-shadow: 3px 3px 4px #000;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+#flipList 
+{
+    margin-left: 35px;
+}
+#flipList li
+{
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+}
+
+/* END FLIPPING IMAGES */
+
+/*  CAST PIC */
+
+#castPicHolder
+{
+    /*float: left;
+    margin-top: 100px;*/
+    margin-left: 10px;
+    width: 698px;
+    height: 464px;
+    border: 3px solid black;
+    background-color: #000;
+}
+
+.columnImage
+{
+    border: none;
+}
+
+.columnImage img
+{
+    border: none;
+    width: 320px;
+    margin-left: 20px;
+}
+
+#jerdee.grouppic
+{
+    position: absolute;
+    margin-top: -1px;
+    margin-left: 555px;
+    float: left;
+    background-image: url('cast/leadingcharssprite700.jpg');
+    background-repeat: no-repeat;
+    background-position: -556px -0px;
+    width: 144px;
+    height: 467px;
+    background-color: #000;
+}
+
+#jerdee.grouppic:hover
+{
+    background-position: -556px -466px;
+}
+
+
+#jenn.grouppic
+{
+    position: absolute;
+    margin-top: -1px;
+    margin-left: 405px;
+    float: left;
+    background-image: url('cast/leadingcharssprite700.jpg');
+    background-repeat: no-repeat;
+    background-position: -405px -0px;
+    width: 150px;
+    height: 467px;
+    background-color: #000;
+}
+
+#jenn.grouppic:hover
+{
+    background-position: -405px -466px;
+}
+
+#elle.grouppic
+{
+    position: absolute;
+    margin-top: -1px;
+    margin-left: 274px;
+    float: left;
+    background-image: url('cast/leadingcharssprite700.jpg');
+    background-repeat: no-repeat;
+    background-position: -274px -0px;
+    width: 131px;
+    height: 269px;
+    background-color: #000;
+}
+
+#elle.grouppic:hover
+{
+    background-position: -274px -466px;
+}
+
+#brennan.grouppic
+{
+    position: absolute;
+    margin-top: 268px;
+    margin-left: 274px;
+    float: left;
+    background-image: url('cast/leadingcharssprite700.jpg');
+    background-repeat: no-repeat;
+    background-position: -274px -268px;
+    width: 131px;
+    height: 198px;
+    background-color: #000;
+}
+
+#brennan.grouppic:hover
+{
+    background-position: -274px -734px;
+}
+
+#kelsey.grouppic
+{
+    position:absolute;
+    margin-top: -1px;
+    margin-left: 0px;
+    float: left;
+    background-image: url('cast/leadingcharssprite700.jpg');
+    background-repeat: no-repeat;
+    background-position: -0px -0px;
+    width: 274px;
+    height: 169px;
+    background-color: #000;
+}
+
+#kelsey.grouppic:hover 
+{
+    background-position: -0px -466px;
+}
+
+#johnny.grouppic
+{
+    position:absolute;
+    margin-top: 168px;
+    margin-left: 0px;
+    float: left;
+    background-image: url('cast/leadingcharssprite700.jpg');
+    background-repeat: no-repeat;
+    background-position: -0px -169px;
+    width: 274px;
+    height: 298px;
+    background-color: #000;
+}
+
+#johnny.grouppic:hover
+{
+    background-position: -0px -635px;
+}
+
+/*  CAST PIC - END */
+
+/*
+.flippedText
+{
+    float: left;
+    vertical-align: middle;
+    color: #efe;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 30px;
+    -moz-box-shadow: 3px 3px 4px #000;
+    -webkit-box-shadow: 3px 3px 4px #000;
+    box-shadow: 3px 3px 4px #000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}*/
+
+#main .subTitle
+{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    -moz-opacity:0.80;
+    -khtml-opacity: 0.80;
+    opacity: 0.80;
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    -moz-box-shadow: 3px 3px 4px #000;
+    -webkit-box-shadow: 3px 3px 4px #000;
+    box-shadow: 3px 3px 4px #000;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 30px;
+    margin-left: 20px;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000');
+    
+}
+
+#main .subTitleBlue
+{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    -moz-opacity:0.80;
+    -khtml-opacity: 0.80;
+    opacity: 0.80;
+    background-color: #005;
+    color: #fff;
+    display: inline-block;
+    -moz-box-shadow: 3px 3px 4px #005;
+    -webkit-box-shadow: 3px 3px 4px #005;
+    box-shadow: 3px 3px 4px #005;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 30px;
+    margin-left: 20px;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#005')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#005');
+    
+}
+.navFrame 
+{
+    float: left;
+    margin-left: 20px;
+    margin-top: 0px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 400px;
+    width: 82px;
+    border: 1px solid black;
+    background-color: Black;
+    
+}
+.subTitleBlue a
+{
+    color: White;
+    text-decoration: none;
+}
+#thumbs
+{
+    float:left;
+} 
+#thumbs img
+{
+    width: 65px;
+    border-bottom: 1px solid white;
+    border-left: 1px solid black;
+    display:block;
+    cursor:pointer;
+} 
+.viewerCaption
+{
+    float: left;
+    height: 3em;
+    padding-top: .5em;
+    width: 680px;
+    padding-bottom: .5em;
+    overflow: visible;
+}
+.viewerFrame
+{
+    float:right;
+    margin-top: 0px;
+    margin-right: 20px;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    background-color: Black;
+}
+#viewer
+{
+    float:left; 
+    height: 400px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.halfLeftBody
+{
+    float: left;
+    width: 350px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.halfRightBody
+{
+    float: right;
+    width: 350px;
+    border-left: 3px groove #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.halfLeftBody ul li
+{
+    display: inline-table;
+    margin-bottom: 10px;
+}
+
+.halfRightBody ul li
+{
+    display: inline-table;
+    margin-bottom: 10px;
+}
+
+.halfRightBody ul li img
+{
+    border: none;
+    background-color: Black;
+}
+
+.glowThis 
+{
+    background-color: Black;
+}
+
+.eightTenPic
+{
+    width: 90px;
+    height: 110px;
+    float: left;
+    border: 1px solid #000;
+    -moz-box-shadow: 3px 3px 4px #000;
+    -webkit-box-shadow: 3px 3px 4px #000;
+    box-shadow: 3px 3px 4px #000;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000');
+    -moz-border-radius: 1em 2em 1em 2em;
+    border-radius: 1em 2em 1em 2em;
+}
+.eightTenPic img
+{
+    width: 80px;
+    height: 100px;
+    float: left;
+    margin: 5px;
+    border: 1px solid #000;
+    -moz-border-radius: 1em 2em 1em 2em;
+    border-radius: 1em 2em 1em 2em;
+}
+#castList li p
+{
+    float: left;
+    display: block;
+    padding: 0;
+    margin-top: 2em;
+    margin-left: 2em;
+}
+
+#castList li .filmStill
+{
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+
+.headShotShow
+{
+    float:left;
+    position: absolute;
+    margin-top: 152px;
+    margin-left: 10px;
+    width: 198px;
+    height: 247px;
+    background-repeat: no-repeat;
+    background-size: 198px 247px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90);
+    -moz-opacity:0.90;
+    -khtml-opacity: 0.90;
+    opacity: 0.90;
+    z-index: 3;
+    background-position: 0px 0px;
+}
+
+.headShotShow:hover
+{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity:1.00;
+    -khtml-opacity: 1.00;
+    opacity: 1.00;
+}
+
+.headShotHide
+{
+    float:left;
+    position: absolute;
+    margin-top: 202px;
+    margin-left: 22px;
+    width: 198px;
+    height: 247px;
+    background-repeat: no-repeat;
+    background-size: 198px 247px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90);
+    -moz-opacity:0.90;
+    -khtml-opacity: 0.90;
+    opacity: 0.90;
+    z-index: 3;
+    background-position: -198px -247px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity:0.00;
+    -khtml-opacity: 0.00;
+    opacity: 0.00;
+}
+
+.headShotPreShow
+{
+    float:left;
+    position: absolute;
+    margin-top: 202px;
+    margin-left: 22px;
+    width: 198px;
+    height: 247px;
+    background-repeat: no-repeat;
+    background-size: 198px 247px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90);
+    -moz-opacity:0.90;
+    -khtml-opacity: 0.90;
+    opacity: 0.90;
+    z-index: 3;
+    background-position: 198px 247px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity:0.00;
+    -khtml-opacity: 0.00;
+    opacity: 0.00;
+}
+
+.filmStillShow
+{
+    float:left;
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 0px;
+    width: 698px;
+    height: 387px;
+    background-repeat: no-repeat;
+    background-size: 698px 387px;
+    z-index: 2;
+    background-position: 0px 0px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity:1.00;
+    -khtml-opacity: 1.00;
+    opacity: 1.00;
+}
+
+.filmStillHide
+{
+    float:left;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 0px;
+    width: 698px;
+    height: 387px;
+    background-repeat: no-repeat;
+    background-size: 698px 387px;
+    z-index: 2;
+    background-position: -698px -387px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity:0.00;
+    -khtml-opacity: 0.00;
+    opacity: 0.00;
+}
+
+.filmStillPreShow
+{
+    float:left;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 0px;
+    width: 698px;
+    height: 387px;
+    background-repeat: no-repeat;
+    background-size: 698px 387px;
+    z-index: 2;
+    background-position: 698px 387px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity:0.00;
+    -khtml-opacity: 0.00;
+    opacity: 0.00;
+}
+
+.titleShow
+{
+    float:left;
+    position: absolute;
+    margin-top: 397px;
+    margin-left: 29px;
+    width: 669px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 698px 50px;
+    z-index: 1;
+    background-position: -80px 0px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity:1.00;
+    -khtml-opacity: 1.00;
+    opacity: 1.00;
+}
+
+.titleHide
+{
+    float:left;
+    position: absolute;
+    margin-top: 397px;
+    margin-left: 29px;
+    width: 669px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 698px 50px;
+    z-index: 1;
+    background-position: -698px -50px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity:0.00;
+    -khtml-opacity: 0.00;
+    opacity: 0.00;
+}
+
+.titlePreShow
+{
+    float:left;
+    position: absolute;
+    margin-top: 397px;
+    margin-left: 29px;
+    width: 669px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 698px 50px;
+    z-index: 1;
+    background-position: 698px 50px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity:0.00;
+    -khtml-opacity: 0.00;
+    opacity: 0.00;
+}
+
+#castPicHolder .leftTriangle
+{
+    float: left;
+    position: absolute;
+    margin-top: 424px;
+    margin-left: 10px;
+    z-index: 2;
+}
+
+.leftTriangle
+{
+    width: 0px;
+    height: 00px;
+    overflow: hidden;
+    border-right: 19px solid white;
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
+    border-left: 1px solid black;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    -moz-opacity:0.80;
+    -khtml-opacity: 0.80;
+    opacity: 0.80;
+}
+
+.leftTriangle:hover
+{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity:1.00;
+    -khtml-opacity: 1.00;
+    opacity: 1.00;
+    cursor: pointer;
+}
+
+#castPicHolder .rightTriangle
+{
+    float: left;
+    position: absolute;
+    margin-top: 424px;
+    margin-left: 668px;
+    z-index: 2;
+}
+
+.rightTriangle
+{
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    border-left: 19px solid white;
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
+    border-right: 1px solid black;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    -moz-opacity:0.80;
+    -khtml-opacity: 0.80;
+    opacity: 0.80;
+}
+
+.rightTriangle:hover
+{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity:1.00;
+    -khtml-opacity: 1.00;
+    opacity: 1.00;
+    cursor: pointer;
+}
+
+.actorBio
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.actorBio h3
+{
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Helvetica, Verdana, Tahoma, Sans-Serif;
+}
+
+.actorBio p
+{
+    font-family: Helvetica, Verdana, Tahoma, Sans-Serif;
+    font-size: 1em;
+}
+
+.halfLeftBody ul li .eightTenPicCaption
+{
+    float:left;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 2em;
+}
+
+.halfLeftBody ul li .eightTenPicCaption h5
+{
+    text-indent: 2em;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+}
+
+.halfLeftBody ul li .eightTenPicCaption h4
+{
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style:  normal;
+    margin: 0px;
+    padding: 0px;
+}
+.screenFlicker
+{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    -moz-opacity:0.50;
+    -khtml-opacity: 0.50;
+    opacity: 0.50;
+}
+
+.screenFlickerDown
+{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
+    filter: alpha(opacity=95);
+    -moz-opacity:0.95;
+    -khtml-opacity: 0.95;
+    opacity: 0.95;
+}
+
 
 #footer
 {
-    color: #999;
-    padding: 10px 0;
-    text-align: center;
-    line-height: normal;
-    margin: 0;
-    font-size: .9em;
+    float: left;
+    z-index: 99;
+    color: #fafafa;
+    width: 726px;
+    margin-top: 10px;
+    margin-left: 2.5em;
+    height: 1.25em;
+    overflow: hidden;
 }
 
-/* TAB MENU   
-----------------------------------------------------------*/
-ul#menu
+#footer ul
 {
-    border-bottom: 1px #5C87B2 solid;
-    padding: 0 0 2px;
-    position: relative;
     margin: 0;
-    text-align: right;
+    padding: 0;
+    width: 726px;
+    list-style-type: none;
 }
 
-ul#menu li
+#footer ul li
 {
+    float: left;
     display: inline;
+}
+
+#footer ul li a
+{
+    padding-right: .5em;
+    padding-left: .5em;
+    color: #fafafa;
+    text-decoration: none;
+    background-color: #000;
+}
+
+#footer ul li a:hover
+{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#footer ul li a:visited
+{
+    color: #fafafa;
+}
+
+#map
+{
+    width: 700px;
+    height: 350px;
+    border: 1px solid black;
+    margin-left: 10px;
+}
+
+/* TITLE */
+
+#banner div
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    position: absolute;
+    z-index: 3;
+}
+#banner img
+{
+    margin-top: 0px;
+    border:none;
+    float: left;
+    position: absolute;
+    z-index: 3;
+}
+
+/*  MENU */
+
+#menuContainer div
+{
+    margin: 0px;
+    padding: 0px;
+}
+#menuContainer ul
+{
+    padding: 0px;
+    margin: 0px;
+}
+#menuContainer ul li
+{
     list-style: none;
+    display: inline;
+    padding: 0px;
+    float: left;
+    border: none;
+    z-index: 98;
 }
 
-ul#menu li#greeting
+#menuContainer ul li:last-child 
 {
-    padding: 10px 20px;
-    font-weight: bold;
-    text-decoration: none;
-    line-height: 2.8em;
-    color: #fff;
+    border-right: 0px;
 }
 
-ul#menu li a
+#menuContainer ul li img
 {
-    padding: 10px 20px;
-    font-weight: bold;
-    text-decoration: none;
-    line-height: 2.8em;
-    background-color: #e8eef4;
-    color: #034af3;
+    border: none;
+    vertical-align: bottom;
+    height: 193px;
+    z-index: 98;
 }
 
-ul#menu li a:hover
+#menuContainer .menu
 {
-    background-color: #fff;
-    text-decoration: none;
+    margin-top: 0px;
 }
 
-ul#menu li a:active
+#menuContainer .menuDown
 {
-    background-color: #a6e2a6;
-    text-decoration: none;
-}
-
-ul#menu li.selected a
-{
-    background-color: #fff;
-    color: #000;
+    margin-top: 160px;   
 }
 
 /* FORM LAYOUT ELEMENTS   
@@ -186,33 +1223,33 @@ ul#menu li.selected a
 
 fieldset 
 {
-    margin: 1em 0;
+    /*margin: 1em 0;
     padding: 1em;
-    border: 1px solid #CCC;
+    border: 1px solid #CCC;*/
 }
 
 fieldset p 
 {
-    margin: 2px 12px 10px 10px;
+    /*margin: 2px 12px 10px 10px;*/
 }
 
 legend 
 {
-    font-size: 1.1em;
+    /*font-size: 1.1em;
     font-weight: 600;
-    padding: 2px 4px 8px 4px;
+    padding: 2px 4px 8px 4px;*/
 }
 
 input[type="text"] 
 {
-    width: 200px;
-    border: 1px solid #CCC;
+    /*width: 200px;
+    border: 1px solid #CCC;*/
 }
 
 input[type="password"] 
 {
-    width: 200px;
-    border: 1px solid #CCC;
+    /*width: 200px;
+    border: 1px solid #CCC;*/
 }
 
 /* TABLE
@@ -220,102 +1257,63 @@ input[type="password"]
 
 table 
 {
-  border: solid 1px #e8eef4;
-  border-collapse: collapse;
+  /*border: solid 1px #e8eef4;
+  border-collapse: collapse;*/
 }
 
 table td 
 {
-  padding: 5px;   
-  border: solid 1px #e8eef4;
+  /*padding: 5px;   
+  border: solid 1px #e8eef4;*/
 }
 
 table th
 {
-  padding: 6px 5px;
+  /*padding: 6px 5px;
   text-align: left;
   background-color: #e8eef4; 
-  border: solid 1px #e8eef4;   
+  border: solid 1px #e8eef4;   */
 }
 
 /* MISC  
 ----------------------------------------------------------*/
 .clear
 {
-    clear: both;
+    /*clear: both;*/
 }
 
 .error
 {
-    color:Red;
-}
-
-#menucontainer
-{
-    margin-top:40px;
-}
-
-div#title
-{
-    display:block;
-    float:left;
-    text-align:left;
-}
-
-#logindisplay
-{
-    font-size:1.1em;
-    display:block;
-    text-align:right;
-    margin:10px;
-    color:White;
-}
-
-#logindisplay a:link
-{
-    color: white;
-    text-decoration: underline;
-}
-
-#logindisplay a:visited
-{
-    color: white;
-    text-decoration: underline;
-}
-
-#logindisplay a:hover
-{
-    color: white;
-    text-decoration: none;
+    /*color:Red;*/
 }
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
 .field-validation-error
 {
-    color: #ff0000;
+    /*color: #ff0000;*/
 }
 
 .field-validation-valid
 {
-    display: none;
+    /*display: none;*/
 }
 
 .input-validation-error
 {
-    border: 1px solid #ff0000;
-    background-color: #ffeeee;
+    /*border: 1px solid #ff0000;
+    background-color: #ffeeee;*/
 }
 
 .validation-summary-errors
 {
-    font-weight: bold;
-    color: #ff0000;
+    /*font-weight: bold;
+    color: #ff0000;*/
 }
 
 .validation-summary-valid
 {
-    display: none;
+    /*display: none;*/
 }
 
 /* Styles for editor and display helpers

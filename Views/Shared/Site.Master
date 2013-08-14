@@ -3,38 +3,288 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="<%=Url.Content("~/Scripts/jquery-1.4.1.min.js")%>" ></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Scripts/jquery-1.7.2.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Scripts/jquery-ui-1.8.20.custom.min.js")%>"></script>
     <script type="text/javascript" src="<%=Url.Content("~/Scripts/jquery.validate.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Scripts/jquery.flip.min.js") %>"></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Scripts/mosaic.1.0.1.min.js") %>"></script>
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/jquery.hoverIntent.minified.js") %>"></script>
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/jquery.illuminate.0.7.min.js") %>"></script>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB8BFTiPb0hh-OUsvUrvh4sxkuzVsGYENQ&sensor=true">
+    </script>
+    <link href="http://widgets.ticketleap.com/widget.css" media="screen" rel="stylesheet"
+        type="text/css" />
+    <script src="http://widgets.ticketleap.com/widget.js" type="text/javascript"></script>
 </head>
-
 <body>
-    <div class="page">
+    <div id="page">
+        <div id="banner">
+            <a href="<%= Url.Action("About","Home") %>">
+                <img alt="Watching You The Series, created by Joshua Thomas" src="<%= Url.Content("~/Content/wy titlebanner.png") %>" />
+            </a>
+        </div>
+        <div id="socialContainer">
+            <ul>
+                <li><a href="http://www.facebook.com/watchingyouseries" target="_blank">
+                    <img alt="Watching You on Facebook" src="<%= Url.Content("~/Content/Facebook.png") %>" />
+                </a></li>
+                <li><a href="http://twitter.com/#!/watchingyouweb" target="_blank">
+                    <img alt="Watching You on Twitter" src="<%= Url.Content("~/Content/Twitter.png") %>" />
+                </a></li>
+                <li><a href="http://www.youtube.com/frozenfireproduction" target="_blank">
+                    <img alt="Watching You on YouTube" src="<%= Url.Content("~/Content/YouTube.png") %>" />
+                </a></li>
+            </ul>
+        </div>
+        <div id="menuContainer">
+            <ul>
+                <li><a class="menu" href="<%= Url.Action("About","Home") %>">
+                    <img class="menu" alt="Touch The Show" src="<%= Url.Content("~/Content/wy watch.png") %>" />
+                </a></li>
+                <li><a class="menu" href="<%= Url.Action("Cast","Home") %>">
+                    <img class="menu" alt="The Cast" src="<%= Url.Content("~/Content/wy cast.png") %>" />
+                </a></li>
+                <li><a class="menu" href="<%= Url.Action("Crew","Home") %>">
+                    <img class="menu" alt="The Crew" src="<%= Url.Content("~/Content/wy crew.png") %>" />
+                </a></li>
+                <li><a class="menu" href="<%= Url.Action("BTS","Home") %>">
+                    <img class="menu" alt="Behind The Scenes" src="<%= Url.Content("~/Content/wy bts.png") %>" />
+                </a></li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#menuContainer .menu").hoverIntent(
+                    function () { $(this).switchClass("menu", "menuDown", 450); }
+                    , function () { $(this).switchClass("menuDown", "menu", 400); }
+                );
+                bindFlipBoxes();
+                bindMosaicBoxes();
+                bindPlayerLinks();
+                makeIlluminate();
+            });
 
-        <div id="header">
-            <div id="title">
-                <h1>My MVC Application</h1>
+            function bindMosaicBoxes() {
+                $('.bar').mosaic({
+                    animation: 'slide'		//fade or slide
+                });
+            }
+            function bindFlipBoxes() {
+                $(".flipBox").click(function () {
+                    var elem = $(this);
+                    if (elem.data('flipped')) {
+                        // If the element has already been flipped, use the revertFlip method
+                        // defined by the plug-in to revert to the default state automatically:
+
+                        elem.revertFlip();
+
+                        // Unsetting the flag:
+                        elem.data('flipped', false);
+                    }
+                    else {
+                        var turnDirs = new Array();
+                        turnDirs[0] = 'tb';
+                        turnDirs[1] = 'lr';
+                        turnDirs[2] = 'bt';
+                        turnDirs[3] = 'rl';
+                        turnDirs[4] = 'tb';
+                        turnDirs[5] = 'lr';
+                        turnDirs[6] = 'bt';
+                        turnDirs[7] = 'rl';
+
+                        ///var showThis = $(document.createElement("div")).html(elem.children('img').attr('alt'));
+                        var turnThisWay = 'tb';
+                        var newText = elem.children('img').attr('alt').split('|');
+                        if (!elem.data('beenflipped') || elem.data('beenflipped') >= newText.length) {
+                            newText = newText[0];
+                            turnThisWay = turnDirs[0];
+                            elem.data('beenflipped', 1);
+                        }
+                        else {
+                            newText = newText[elem.data('beenflipped')];
+                            turnThisWay = turnDirs[elem.data('beenflipped')];
+                            elem.data('beenflipped', (elem.data('beenflipped') + 1));
+                            if (elem.data('beenflipped') == 8) {
+                                $(this).effect("shake", { direction: 'up', times: '20' }, 5);
+                                $(".flipBox").hide("explode", { pieces: 9 }, 2000);
+                                return false;
+                            }
+                        }
+
+                        var showThis = '<span style="font-size: 1.4em; vertical-align: middle; text-align: center; margin: 15px 5px 5px 5px; color: #100;">' + newText + '</span>';
+                        elem.flip({
+                            direction: turnThisWay,
+                            speed: 100,
+                            color: '#eff',
+                            onAnimation: function () {
+                                // Insert the contents of the .sponsorData div (hidden from view with display:none)
+                                // into the clicked .sponsorFlip div before the flipping animation starts:
+
+                                elem.html(showThis);
+                            }
+                        });
+
+                        // Setting the flag:
+                        elem.data('flipped', true);
+
+                    }
+                });
+            }
+
+            function makeIlluminate() {
+                $("#footer a").hoverIntent(function () {
+                    $(this).effect("bounce", { times: 2, distance: 2, direction: 'up' }, 300);
+                }, function () {
+                });
+
+                $(".subTitleBlue").hover(
+                    function () {
+                        $(this).illuminate({ 'blink': 'false', 'blinkSpeed': '250' });
+                    }
+                        , function () {
+                            $(this).illuminateDie();
+                            $(this).css({ '-moz-box-shadow': '3px 3px 4px #005',
+                                '-webkit-box-shadow': '3px 3px 4px #005',
+                                'box-shadow': '3px 3px 4px #005'
+                            });
+                        }
+                        );
+
+                        $(".glowThis").hover(
+                    function () {
+                        $(this).illuminate({ 'blink': 'false', 'blinkSpeed': '250', 'outerGlow' : 'true', 'outerGlowColor':  '#0000aa' });
+                    }
+                        , function () {
+                            $(this).illuminateDie();
+                        }
+                        );
+
+                
+            }
+
+            function bindPlayerLinks() {
+                $(".youTubeLink").click(function () {
+                    var vidCode = $(this).attr('href').split('?')[1].split('&')[0].split('=')[1];
+                    /*var defaults = {
+                    // Plugin init params
+                    width: 425, // the width of the player
+                    height: 355, // the height of the player
+                    allowFullScreen: "true", // true by default, allow user to go full screen
+                    initialVideo: vidCode, // the video that is loaded into the player
+                    start: 0, 
+                    preferredQuality: "default",// preferred quality: default, small, medium, large, hd720
+                    showControls: 1, // whether the player should have the controls visible, 0 or 1
+                    showRelated: 0, // show the related videos when the player ends, 0 or 1 
+                    autoPlay: true, // whether the player should autoplay the video, 0 or 1
+                    autoHide: true, 
+                    theme: "dark", // possible options: "dark" or "light"
+                    color: "red", // possible options: "red" or "white"
+                    showinfo: true, // if you want the player to include details about the video
+                    modestbranding: true, // specify to include/exclude the YouTube watermark
+                    // the location to the swfobject import for the flash player, default to Google's CDN
+                    wmode: "transparent", // note: transparent maintains z-index, but disables GPU acceleration
+                    swfobjectURL: "http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js",
+                    loadSWFObject: true, // if you include swfobject, set to false
+                    // HTML5 specific attrs
+                    iframed: true, // iframed can be: true, false; if true, but not supported, degrades to flash
+                    // Player Trigger Specific Functionality
+                    onPlay: function(id){}, // after the play method is called
+                    onPause: function(){}, // after the pause method is called
+                    onStop: function(){}, // after the player is stopped
+                    onSeek: function(time){}, // after the video has been seeked to a defined point
+                    onMute: function(){}, // after the player is muted
+                    onUnMute: function(){}, // after the player is unmuted
+                    // Player State Change Specific Functionality
+                    onPlayerUnstarted: function(){}, // when the player returns a state of unstarted
+                    onPlayerEnded: function(){}, // when the player returns a state of ended
+                    onPlayerPlaying: function(){}, //when the player returns a state of playing
+                    onPlayerPaused: function(){}, // when the player returns a state of paused
+                    onPlayerBuffering: function(){}, // when the player returns a state of buffering
+                    onPlayerCued: function(){}, // when the player returns a state of cued
+                    onQualityChange: function(quality){}, // a function callback for when the quality of a video is determined
+                    // Error State Specific Functionality
+                    onErrorNotFound: function(){}, // if a video cant be found
+                    onErrorNotEmbeddable: function(){}, // if a video isnt embeddable
+                    onErrorInvalidParameter: function(){} // if we've got an invalid param
+                    });*/
+                    $("#backDrop").show();
+
+                    if (parseInt($("#playerFrame").css('margin-top')) == 100) {
+                        var windowHeight = (parseInt($(window).height()) - 385) / 2;
+                        $("#playerFrame").css({ 'margin-top': windowHeight });
+                    }
+
+                    $("#playerBody").show();
+
+                    $("#backDrop").click(function () {
+                        $("#playerFrame").slideUp();
+                        $("#backDrop").hide();
+                        $("#playerBody").hide().html(''); //tubeplayer("destroy").hide();
+                    });
+                    $("#playerFrameExit").click(function () {
+                        $("#playerFrame").slideUp();
+                        $("#backDrop").hide();
+                        $("#playerBody").hide().html(''); //tubeplayer("destroy").hide();
+                        return false;
+                    });
+                    $('#playerBody').html('<iframe width="640" height="360" src="http://www.youtube.com/embed/' + vidCode + '" frameborder="0" allowfullscreen></iframe>');
+                    //$("#playerBody").tubeplayer("play", vidCode);
+                    //alert(vidCode);
+                    $("#playerFrame").slideDown().draggable(); // show("drop", { direction: 'down' }, 1000);
+
+                    return false;
+
+                });
+            }
+
+            function pulsateEffect() {
+                $(".screenFlicker").effect("pulsate", {}, 83, pulsateEffect);
+            }
+
+
+
+
+        </script>
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-31656220-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+        <div id="mainBorder" class="blackCanvasBorder">
+            <div id="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </div>
-              
-            <div id="logindisplay">
-                <% Html.RenderPartial("LogOnUserControl"); %>
-            </div> 
-            
-            <div id="menucontainer">
-            
-                <ul id="menu">              
-                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
-                    <li><%: Html.ActionLink("About", "About", "Home")%></li>
+            <div id="footer">
+                <ul>
+                    <li><a href="http://www.youtube.com/frozenfireproduction" target="_blank">Copyright
+                        2012, Frozen Fire Productions</a>|</li>
+                    <li><a href="<%= Url.Action("About","Home")   %>">Home</a>|</li>
+                    <li><a href="<%= Url.Action("Cast","Home") %>">Cast</a>|</li>
+                    <li><a href="<%= Url.Action("Crew","Home") %>">Crew</a>|</li>
+                    <li><a href="<%= Url.Action("BTS","Home") %>">BTS</a>|</li>
+                    <li><a href="<%= Url.Action("Movies_In_San_Antonio","Home").Replace("_","-") %>">Locations</a>|</li>
+                    <li><a href="<%= Url.Action("Watching_You_Characters","Home").Replace("_","-") %>">Characters</a>|</li>
+                    <li><a href="<%= Url.Action("Funny_Web_Series","Home").Replace("_","-") %>">Funny Series</a></li>
                 </ul>
-            
             </div>
         </div>
-
-        <div id="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-
-            <div id="footer">
+        <div id="backDrop">
+        </div>
+        <div id="playerFrame" class="ui-draggable">
+            <a id="playerFrameExit" href="#">exit&nbsp;</a><div id="playerBody">
             </div>
         </div>
     </div>
