@@ -16,9 +16,8 @@
     <h1 class="subTitle">Get a Sneak Peak!
     </h1>
 
-    <ul>
-        <li><h5><a class="youTubeLink" href="http://www.youtube.com/watch?v=f6mJLE6UgjY" target="_blank">Watching You Series Trailer</a></h5><div class="glowThis"><a class="youTubeLink" href="http://www.youtube.com/watch?v=f6mJLE6UgjY" target="_blank"><img alt="Watching You Trailer" width="200px" src="<%= Url.Content("~/Content/trailerpic.jpg") %>" /></a></div></li>
-        <li><h5><a class="youTubeLink" href="http://www.youtube.com/watch?v=F8Hd7IlCv6o" target="_blank">Watching You Series Teaser</a></h5><div class="glowThis"><a class="youTubeLink" href="http://www.youtube.com/watch?v=F8Hd7IlCv6o" target="_blank"><img alt="Watching You Teaser" width="200px" src="<%= Url.Content("~/Content/teaserpic.jpg") %>" /></a></div></li>
+    <li><h5><a class="youTubeLink" href="http://www.youtube.com/watch?v=sl3FMsKvJCE" target="_blank">Watching You Episode 1</a></h5><div class="glowThis"><a class="youTubeLink" href="http://www.youtube.com/watch?v=sl3FMsKvJCE" target="_blank"><img alt="Watching You Episode 1" width="200px" src="<%= Url.Content("~/Content/trailerpic.jpg") %>" /></a></div></li>
+        <li><h5><a class="youTubeLink" href="http://www.youtube.com/watch?v=bEt_tQlWo-M" target="_blank">Watching You Series Trailer</a></h5><div class="glowThis"><a class="youTubeLink" href="http://www.youtube.com/watch?v=bEt_tQlWo-M" target="_blank"><img alt="Watching You Trailer" width="200px" src="<%= Url.Content("~/Content/teaserpic.jpg") %>" /></a></div></li>
     </ul>
     <a href="http://watchingyouseries.wordpress.com/" target="_blank"><h1 class="subTitleBlue">Director's Blog</h1></a>
     <h2 class="subTitle">Comedy Series News</h2>
